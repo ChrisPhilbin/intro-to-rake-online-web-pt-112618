@@ -9,14 +9,13 @@
 #     puts "hola from Rake!"
 #   end
 # end
+task :enviornment do
+  require_relative './config/enviornment'
+end
 
 namespace :db do
   desc 'migrate changes to your database'
   task :migrate => :environment do
     Student.create_table
-  end
-
-  task :enviornment do
-    require_relative './config/enviornment'
   end
 end
